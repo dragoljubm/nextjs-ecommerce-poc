@@ -1,0 +1,16 @@
+.navbar {
+  padding: 10px;
+  background-color: gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1em;
+}
+
+.navbar a {
+  font-weight: bold;
+}
+
+.activeLink {
+  color: rgb(154, 205, 255);
+}
