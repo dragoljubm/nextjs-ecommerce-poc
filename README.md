@@ -31,3 +31,5 @@ To start the production server
 ```bash
 npm run start
 ```
+
+### To modify env variables used within the app, view the contents of `./next.config.js`
