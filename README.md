@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a WIP Readme, still very much subject changes, corrections and improvements
 
 ## Getting Started
 
@@ -42,14 +42,14 @@ Product pages under the route /products-ssg are statically generated upon build-
 | 1000       |        12.1 _s_ |
 | 10000      |         1 _min_ |
 
-# SSR, SSG, ISR, CSR
+# SSR, CSR, SSG, ISR,
 
 Brief layman's explanations of terms:
 
-- SSR (Server side rendering) - The server gets the data and renders the requested page upon each request.
-- CSR (Client side rendering) - The client downloads barebone HTML and the resources (e.g. JS bundles, other data) needed to build the page in their own browser
-- SSG (Static site generation) - Data is fetched once during build time and pages are built using it, served to the user as fully finished pages. Updating pages built with only with SSG requires a full rebuild of the site.
-- ISR (Incremental static re-generation) - A complement to SSG, allowing SSG pages to be somewhat "dynamic" by providing revalidation intervals for them or by revalidating them on-demand.
+- [SSR (Server side rendering)](https://nextjs.org/docs/basic-features/pages#server-side-rendering) - The server gets the data and renders the requested page upon each request.
+- [CSR (Client side rendering)](https://nextjs.org/docs/basic-features/data-fetching/client-side) - The client downloads barebone HTML and the resources (e.g. JS bundles, other data) needed to build the page in their own browser
+- [SSG (Static site generation)](https://nextjs.org/docs/basic-features/pages#static-generation) - Data is fetched once during build time and pages are built using it, served to the user as fully finished pages. Updating pages built with only with SSG requires a full rebuild of the site.
+- [ISR (Incremental static regeneration)](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration) - A complement to SSG, allowing SSG pages to be somewhat "dynamic" by providing revalidation intervals for them or by revalidating them on-demand.
 
 Each of these approaches provides benefits as well as cons therefore there is no way to pick a clear winner. Rather, we could use some metrics to help us decide which approach is best for each use case.
 
@@ -89,3 +89,9 @@ Sometimes, the decision can be easy.
 But sometimes, a mix of different approaches can be the best fit.
 
 **Product page**: Has elements that are repetitive and static (e.g. page layout) which could be pre-rendered, but has data (the product) that has to be up-to-date. **SSG** combined with **CSR** for fetching the crucial product data could be a good solution.
+
+## Additional content
+
+### SWR - React hooks for data fetching
+
+_TBD_
