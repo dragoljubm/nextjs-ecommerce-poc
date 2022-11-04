@@ -6,16 +6,12 @@ First, run the locally hosted json-server (runs on port 4000 and watches db-100.
 
 ```bash
 npm run server
-# or
-yarn server
 ```
 
 Run the Next.js development server
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the results
@@ -32,4 +28,18 @@ To start the production server
 npm run start
 ```
 
-### To modify env variables used within the app, view the contents of `./next.config.js`
+#### To modify env variables used within the app, view the contents of `./next.config.js`
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+# Build times
+
+Product pages under the route /products-ssg are statically generated upon build-time, after running the production build process 10 times for each of the three databases (db-100, db-1000 & db-10000) these are the respective average production build times
+
+| N products | Avg. Build time |
+| ---------- | --------------: |
+| 100        |         7.5 _s_ |
+| 1000       |        12.1 _s_ |
+| 10000      |         1 _min_ |
