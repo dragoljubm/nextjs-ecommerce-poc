@@ -15,6 +15,10 @@ const links = [
     name: "SSG",
     slug: "/products-ssg",
   },
+  {
+    name: "SWR",
+    slug: "/swr",
+  },
 ];
 
 const Navigation = () => {

@@ -3,7 +3,7 @@ import ProductDisplay from "../../components/ProductDisplay";
 export async function getStaticPaths() {
   const res = await fetch(`${process.env.DB_HOST}/products`);
   const paths = (await res.json()).map((product) => {
-    return { params: { id: product.id } };
+    return { params: { id: encodeURI(product.id) } };
   });
   return {
     paths,
@@ -21,13 +21,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const res = await fetch(`${process.env.DB_HOST}/products/${params.id}`);
-  const productData = await res.json();
-
-  console.log(`(Re)generating page for product ${params.id}`);
+  const product = await res.json();
 
   return {
     props: {
-      productData,
+      product,
     },
     /*
       Tells Next.js to serve the cached version of the page for at least 120 seconds,
@@ -41,16 +39,8 @@ export async function getStaticProps({ params }) {
   };
 }
 
-const ProductV1 = ({ productData }) => {
-  return (
-    <ProductDisplay
-      name={productData.name}
-      price={productData.price}
-      about={productData.about}
-      imageSrc={productData.imageSrc}
-      inStock={productData.inStock}
-    />
-  );
+const ProductV1 = ({ product }) => {
+  return <ProductDisplay product={product} />;
 };
 
 export default ProductV1;

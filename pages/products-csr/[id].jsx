@@ -25,15 +25,7 @@ const ProductV3 = () => {
     return null;
   }
 
-  return (
-    <ProductDisplay
-      name={product.name}
-      price={product.price}
-      about={product.about}
-      imageSrc={product.imageSrc}
-      inStock={product.inStock}
-    />
-  );
+  return <ProductDisplay product={product} />;
 };
 
 export default ProductV3;
