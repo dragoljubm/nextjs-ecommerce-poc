@@ -76,9 +76,9 @@ Pure SSG (SSG without ISR) is obviously a bad choice for pages which require the
 
 ## Initial load time
 
-SSG and ISR pages provide the best initial load time as the server has the whole page ready and it is just a matter of the time it takes for it to be sent to the user. Caching and CDN optimization benefits this massively.
+SSG and ISR pages provide the best initial load time as the server has the whole page ready and it is just a matter of the time it takes for it to be sent to the user. Caching and CDN optimization can be crucial.
 
-CSR and SSR both depend on some work being done before the user can expect a functional page. CSR relies on the client downloading JS and data to create the page on their side. Large JS bundles will affect the load times, especially for users with network issues. SSR relies on the server building the page on it's end each time the page is requested and sending it to the client. Distance between the client and server can cause latency.
+CSR and SSR both depend on some work being done before the user can expect a functional page. CSR relies on the client downloading JS and data to create the page on their side. Large JS bundles will affect the load times, especially for users with network issues. SSR relies on the server building the page on its end each time the page is requested and sending it to the client. Distance between the client and server can cause latency.
 
 # Conclusion
 
@@ -88,7 +88,7 @@ Sometimes, the decision can be easy.
 
 But sometimes, a mix of different approaches can be the best fit.
 
-**Product page**: Has elements that are repetitive and static (e.g. page layout) which could be pre-rendered, but has data (the product) that has to be up-to-date. **SSG** combined with **CSR** for fetching the crucial product data could be a good solution.
+**Product page**: Has elements that are repetitive and static (e.g. page layout components) which could be pre-rendered, but has data (the product) that has to be up-to-date. **SSG** combined with **CSR** for fetching the crucial product data could be the ideal solution.
 
 ## Additional content
 
